@@ -1828,7 +1828,8 @@ nav, .phone {
     align-items: center;
     color: #b1b1b1;
     font-size: 16px;
-    gap: 10px; /* Відстань між іконкою та текстом */
+    gap: 10px;
+    white-space: nowrap;
 }
 
 .phone-icon {
@@ -1837,7 +1838,99 @@ nav, .phone {
     height: 24px;
 }
 
-/* Адаптивні стилі для менших екранів */
+@media (min-width: 1024px) and (max-width: 1920px) {
+    .footer-section {
+        padding: 30px; /* Збільшити відступи для кращого вигляду */
+    }
+
+    .footer-content {
+        flex-direction: row; /* Горизонтальне розташування */
+        justify-content: space-between; /* Вирівнювання з відстанями між елементами */
+        align-items: center; /* Вертикальне вирівнювання по центру */
+        gap: 40px; /* Зменшити відстань між блоками */
+    }
+
+    .footer-logo {
+        justify-content: flex-start; /* Вирівнювання логотипу зліва */
+    }
+
+    .footer-logo img {
+        width: 45px; /* Зменшити розмір логотипу */
+    }
+
+    .footer-links,
+    .footer-social {
+        gap: 10px; /* Відстань між елементами */
+    }
+
+    .footer-links h3,
+    .footer-social h3 {
+        font-size: 18px; /* Зменшити розмір заголовків */
+    }
+
+    .footer-links a,
+    .footer-social a {
+        font-size: 16px; /* Зменшити розмір тексту посилань */
+    }
+
+    .footer-contact {
+        justify-content: flex-end; /* Вирівнювання контактів справа */
+        gap: 10px; /* Зменшення відстані між іконкою та текстом */
+    }
+
+    .phone-icon {
+        width: 24px; /* Зменшити іконку телефону */
+        height: 24px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .footer-section {
+        padding: 20px;
+    }
+
+    .footer-content {
+        flex-direction: row; /* Залишаємо горизонтальне розташування */
+        justify-content: space-between; /* Вирівнювання з відстанями між елементами */
+        align-items: center; /* Вертикальне вирівнювання по центру */
+        gap: 20px; /* Зменшити відстань між блоками */
+    }
+
+    .footer-logo {
+        justify-content: flex-start; /* Вирівнювання логотипу зліва */
+    }
+
+    .footer-logo img {
+        width: 35px; /* Зменшити розмір логотипу */
+    }
+
+    .footer-links,
+    .footer-social {
+        gap: 5px; /* Зменшення відстані між елементами */
+    }
+
+    .footer-links h3,
+    .footer-social h3 {
+        font-size: 16px; /* Зменшити розмір заголовків */
+    }
+
+    .footer-links a,
+    .footer-social a {
+        font-size: 14px; /* Зменшити розмір тексту посилань */
+    }
+
+    .footer-contact {
+        justify-content: center; /* Вирівнювання контактів по центру */
+        gap: 5px; /* Зменшення відстані між іконкою та текстом */
+    }
+
+    .phone-icon {
+        width: 20px; /* Зменшити іконку телефону */
+        height: 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column; /* Вертикальне розташування елементів */
