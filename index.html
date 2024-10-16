@@ -64,11 +64,7 @@
       </div>
 
       <div class="button-container">
-        <a
-          href="javascript:void(0);"
-          class="button"
-          onclick="openModal('search')"
-          >Записатися на пробний урок</a>
+        <a href="javascript:void(0);" id="openBecomeModalButton" class="button" onclick="openModal('search') ">Записатися на пробний урок</a>
       </div>
 
       <div class="image-container">
@@ -101,6 +97,34 @@
         />
       </div>
     </section>
+
+    <!-- Модальне вікно "Задай питання" -->
+    <div id="becomeModal" class="modal become-modal">
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('becomeModal').style.display='none'">&times;</span>
+    
+        <form id="becomeForm">
+          <label for="becomeName"><img src="./img/modal_window/person.png" alt="">Ім'я:</label>
+          <input type="text" id="becomeName" name="name" placeholder="Введіть ваше ім'я" required />
+    
+          <label for="becomePhone">
+            <img src="./img/modal_window/Phone.png" alt="">Телефон:
+          </label>
+          <input type="tel" id="becomePhone" name="phone" placeholder="Введіть номер телефону" 
+               required pattern="[0-9]{10,15}" title="Введіть правильний номер телефону (10-15 цифр)" />        
+    
+          <label for="becomeAge"><img src="./img/modal_window/age.png" alt="">Вік:</label>
+          <input type="number" id="becomeAge" name="age" placeholder="Введіть ваш вік" required />
+    
+          <label for="becomeMessage"><img src="./img/modal_window/message.png" alt="">Повідомлення:</label>
+          <textarea id="becomeMessage" name="message" placeholder="Ваше повідомлення" required></textarea>
+    
+          <input type="hidden" name="form_type" value="become_tutor" />
+    
+          <button type="submit" class="submit-button">Записатися</button>
+        </form>
+      </div>
+    </div>    
 
     <section id="learning-directions" class="learning-directions">
       <h1>Різні напрямки навчання</h1>
@@ -161,49 +185,60 @@
     <section id="advantages" class="advantages">
       <div class="advantages-header">
         <h1>Наші переваги</h1>
-        <img src="./img/arrows/line.png" alt="пряма" class="line">
-          <div class="arrows-container">
-            <img src="./img/arrows/arrows.png" alt="стрілка" class="arrow">
-            <img src="./img/arrows/arrows.png" alt="стрілка" class="arrow">
-            <img src="./img/arrows/arrows.png" alt="стрілка" class="arrow">
-          </div>
         <div class="advantages-content">
-            <p>Зосередившись на своїх інтересах і потребах, ви швидко досягнете значних результатів. У нашій школі індивідуальний підхід допоможе вам розвиватися у власному темпі.</p>
-            <p>Не витрачайте час — оберіть ідеальну атмосферу для навчання, де підтримка викладача зробить процес вивчення ефективнішим і приємнішим! Розпочніть свою мовну подорож вже сьогодні!</p>
-            <p>Вивчення англійської мови онлайн — це зручно та цікаво! Індивідуальні уроки допоможуть швидше подолати страх спілкування та отримати знання в комфортній атмосфері.</p>
+            <div class="advantage-item">
+                <div class="arrow">&#8594;</div>
+                <p>Зосередившись на своїх інтересах і потребах, ви швидко досягнете значних результатів. У нашій школі індивідуальний підхід допоможе вам розвиватися у власному темпі.</p>
+            </div>
+            <div class="advantage-item">
+                <div class="arrow">&#8594;</div>
+                <p>Не витрачайте час — оберіть ідеальну атмосферу для навчання, де підтримка викладача зробить процес вивчення ефективнішим і приємнішим! Розпочніть свою мовну подорож вже сьогодні!</p>
+            </div>
+            <div class="advantage-item">
+                <div class="arrow">&#8594;</div>
+                <p>Вивчення англійської мови онлайн — це зручно та цікаво! Індивідуальні уроки допоможуть швидше подолати страх спілкування та отримати знання в комфортній атмосфері.</p>
+            </div>
         </div>       
-      </div>    
-      <div class="advantages-grid">
-          <div class="advantage-item" style="background-color: #F6E8FF;">
-            <img src="./img/advantages/Interactive materials.png" alt="">
-              <h3>Інтерактивні матеріали</h3>
-              <ul>
-                  <li>відео</li>
-                  <li>аудіо</li>
-                  <li>ігри</li>
-              </ul>
-              <p>(дітки краще сприймають матеріал в ігровій формі)</p>
-          </div>
-          <div class="advantage-item" style="background-color: #FFE4CB;">
-            <img src="./img/advantages/Improvements.png" alt="">
-              <h3>Покращення</h3>
-              <ul>
-                  <li>граматики</li>
-                  <li>говоріння</li>
-                  <li>сприйняття на слух</li>
-                  <li>читання</li>
-              </ul>
-          </div>
-          <div class="advantage-item" style="background-color: #D9FFE0;">
-            <img src="./img/advantages/Individual materials.png" alt="">
-              <h3>Підбір матеріалів індивідуально</h3>
-              <ul>
-                  <li>вчимося за нашими матеріалами</li>
-                  <li>вчимося за вашими підручниками</li>
-              </ul>
-          </div>
       </div>
-    </section>
+    
+         
+      <div class="advantages-grid">
+        <div class="advantage-grid-item" style="background-color: #F6E8FF;">
+            <img src="./img/advantages/Interactive materials.png" alt="">
+            <h3>Інтерактивні матеріали</h3>
+            <div class="advantage-content">
+                <ul>
+                    <li>відео</li>
+                    <li>аудіо</li>
+                    <li>ігри</li>
+                </ul>
+                <p>(дітки краще сприймають матеріал в ігровій формі)</p>
+            </div>
+        </div>
+        <div class="advantage-grid-item" style="background-color: #FFE4CB;">
+            <img src="./img/advantages/Improvements.png" alt="">
+            <h3>Покращення</h3>
+            <div class="advantage-content">
+                <ul>
+                    <li>граматики</li>
+                    <li>говоріння</li>
+                    <li>сприйняття на слух</li>
+                    <li>читання</li>
+                </ul>
+            </div>
+        </div>
+        <div class="advantage-grid-item" style="background-color: #D9FFE0;">
+            <img src="./img/advantages/Individual materials.png" alt="">
+            <h3>Підбір матеріалів індивідуально</h3>
+            <div class="advantage-content">
+                <ul>
+                    <li>вчимося за нашими матеріалами</li>
+                    <li>вчимося за вашими підручниками</li>
+                </ul>
+            </div>
+        </div>
+      </div>    
+    </section>  
   
     <section class="price-section" id="prices">
       <div class="price-card">
@@ -244,16 +279,66 @@
         <h2>Виникли питання?</h2>
         <p>Пишіть нам і отримайте відповідь найближчим часом</p>
       </div>
-      <button>Написати питання</button>
-    </section>    
+      <button href="javascript:void(0);" id="openQuestionModalButton" class="custom-button" onclick="openModal('become')">Написати питання</button>
+    </section> 
+       
+    <!-- Модальне вікно "Задай питання" -->
+    <div id="questionModal" class="modal" style="display: none">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <form id="searchForm">
+              
+            <label for="becomeName"><img src="./img/modal_window/person.png" alt="">Ім'я:</label>
+            <input type="text" id="becomeName" name="name" placeholder="Введіть ваше ім'я" required />
+              
+            <label for="becomePhone">
+              <img src="./img/modal_window/Phone.png" alt="">Телефон:
+            </label>
+            <input type="tel" id="becomePhone" name="phone" placeholder="Введіть номер телефону" 
+                 required pattern="[0-9]{10,15}" title="Введіть правильний номер телефону (10-15 цифр)" />    
+
+                 <label for="becomeMessage"><img src="./img/modal_window/message.png" alt="">Питання:</label>
+              <textarea id="becomeMessage" name="message" placeholder="Ваше повідомлення" required></textarea>
+
+              <button type="submit" class="submit-button">Запитати</button>
+          </form>
+      </div>
+    </div>
 
     <!-- Вакансія викладача секція -->
     <section class="job-section" id="job-search">
       <h2>Вакансія викладача</h2>
       <p>Якщо ви зацікавлені приєднатися до нашої команди та стати </p>
       <p>частиною професійного колективу, заповніть анкету</p>
-      <a href="javascript:void(0);" class="button" onclick="openModal('become')">Заповнити</a>
+      <a href="javascript:void(0);" id="openSearchModalButton" class="button" onclick="openModal('become')">Заповнити</a>
     </section>
+
+    <!-- Модальне вікно "Шукати репетитора" -->
+    <div id="searchModal" class="modal" style="display: none">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <form id="searchForm">
+              
+              <label for="becomeName"><img src="./img/modal_window/person.png" alt="">Ім'я:</label>
+              <input type="text" id="becomeName" name="name" placeholder="Введіть ваше ім'я" required />
+
+              <label for="becomePhone">
+                <img src="./img/modal_window/Phone.png" alt="">Телефон:
+              </label>
+              <input type="tel" id="becomePhone" name="phone" placeholder="Введіть номер телефону" 
+                   required pattern="[0-9]{10,15}" title="Введіть правильний номер телефону (10-15 цифр)" />        
+            
+              <label for="becomeAge"><img src="./img/modal_window/age.png" alt="">Вік:</label>
+              <input type="number" id="becomeAge" name="age" placeholder="Введіть ваш вік" required />
+            
+              <label for="searchExperience"><img src="./img/modal_window/work.png" alt="">Досвід:</label>
+              <input type="text" id="searchExperience" name="experience" placeholder="Опишіть ваш досвід" required />
+              <input type="hidden" name="form_type" value="search_tutor" />
+
+              <button type="submit" class="submit-button">Надіслати</button>
+          </form>
+      </div>
+    </div>
 
     <!-- Підвал -->
     <footer class="footer-section">
@@ -264,8 +349,8 @@
               <span class="logo-bloom">Bloom</span>
           </div>
   
-          <div class="footer-links">
-              <h3>Помощь</h3>
+          <div class="footer-links">і
+              <h3>Допомога</h3>
               <a href="#learning-directions">Напрямки</a>
               <a href="#prices">Вартість</a>
               <a href="#free-lesson">Пробний урок</a>
@@ -286,120 +371,9 @@
               <a href="tel:0672903393">+38 (067) 290 33 93</a>
           </div>
       </div>
-  </footer>
-  
-
-    <!-- Modal Structure for "Шукаю Репетитора" -->
-    <div id="searchModal" class="modal" style="display: none">
-      <div class="modal-content">
-        <span
-          class="close"
-          onclick="document.getElementById('searchModal').style.display='none'"
-          >&times;</span
-        >
-        <h2>Знайди свого Репетитора</h2>
-        <!-- Форма для шукаючих репетитора -->
-        <form id="searchForm">
-          <label for="searchName">Ваше ім'я:</label>
-          <input
-            type="text"
-            id="searchName"
-            name="name"
-            placeholder="Введіть ваше ім'я "
-            required
-          />
-
-          <label for="searchPhone">Телефон:</label>
-          <input
-            type="tel"
-            id="searchPhone"
-            name="phone"
-            placeholder="Введіть номер телефону"
-            required
-          />
-
-          <label for="searchAge">Вік:</label>
-          <input
-            type="text"
-            id="searchAge"
-            name="age"
-            placeholder="Введіть вік"
-            required
-          />
-
-          <label for="subject">Предмет, яким хочете займатися:</label>
-          <select id="subject" name="subject" required>
-            <option value="">Оберіть предмет</option>
-            <option value="математика">Математика</option>
-            <option value="англійська мова">Англійська мова</option>
-            <option value="німецька мова">Німецька мова</option>
-          </select>
-
-          <label for="level">Рівень знань:</label>
-          <select id="level" name="level" required>
-            <option value="">Оберіть рівень</option>
-            <option value="початківець">Початківець</option>
-            <option value="середній">Середній</option>
-            <option value="достатній">Достатній</option>
-          </select>
-
-          <input type="hidden" name="form_type" value="search_tutor" />
-          <!-- Поле для визначення форми -->
-
-          <button type="submit">Надіслати</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Modal Structure for "Хочу стати Репетитором" -->
-    <div id="becomeModal" class="modal" style="display: none">
-      <div class="modal-content">
-        <span
-          class="close"
-          onclick="document.getElementById('becomeModal').style.display='none'"
-          >&times;</span
-        >
-        <h2>Залиште заявку для того, щоб стати репетитором</h2>
-
-        <!-- Форма для тих, хто хоче стати репетитором -->
-        <form id="becomeForm">
-          <label for="becomeName">Ваше ім'я:</label>
-          <input
-            type="text"
-            id="becomeName"
-            name="name"
-            placeholder="Введіть ваше ім'я "
-            required
-          />
-
-          <label for="becomePhone">Телефон:</label>
-          <input
-            type="tel"
-            id="becomePhone"
-            name="phone"
-            placeholder="Введіть номер телефону"
-            required
-          />
-
-          <label for="becomeSubject">Предмет, який ви викладаєте:</label>
-          <input
-            type="text"
-            id="becomeSubject"
-            name="subject"
-            placeholder="Введіть що хочете викладати"
-            required
-          />
-
-          <input type="hidden" name="form_type" value="become_tutor" />
-          <!-- Поле для визначення форми -->
-
-          <button type="submit">Надіслати</button>
-        </form>
-      </div>
-    </div>
+    </footer>
 
     <!-- Підключення JavaScript файлу -->
     <script src="./js/main.js"></script>
-    <script src="./telegram-bot-server/tg_host.js"></script>
   </body>
 </html>
