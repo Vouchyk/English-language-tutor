@@ -1,3 +1,32 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('.advantages-header h1');
+    const content = document.querySelector('.advantages-content');
+
+    const showOnScroll = () => {
+        const headerPosition = header.getBoundingClientRect().top; // Отримуємо позицію заголовка
+        const contentPosition = content.getBoundingClientRect().top; // Отримуємо позицію контенту
+        const windowHeight = window.innerHeight; // Висота вікна браузера
+
+        // Якщо заголовок або контент перебуває в межах видимого вікна
+        if (headerPosition < windowHeight - 100) {
+            header.classList.add('visible');
+        }
+        if (contentPosition < windowHeight - 100) {
+            content.classList.add('visible');
+        }
+    };
+
+    // Викликаємо функцію для ініціалізації
+    showOnScroll();
+
+    // Додаємо слухач подій для прокручування
+    window.addEventListener('scroll', showOnScroll);
+});
+
+
+
+
+
 // Функція для перемикання видимості навігаційного меню
 function toggleMenu() {
     const hamburger = document.getElementById("hamburger");
@@ -36,34 +65,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Отримуємо всі кнопки для зміни мови
-const languageButtons = document.querySelectorAll('.button_language');
 
-// Додаємо обробник подій для натискання на кнопки
-languageButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        button.classList.add('active'); // Додаємо клас 'active' до натиснутої кнопки
+// Функція для відкриття модального вікна "Хочу стати Репетитором"
+function openBecomeModal() {
+    document.getElementById('becomeModal').style.display = 'flex'; // Використовуємо flex для центрування
+}
 
-        // Прибираємо клас 'active' через 2 секунди
-        setTimeout(() => {
-            button.classList.remove('active');
-        }, 2000); // Затримка 2 секунди
+// Функція для відкриття модального вікна "Знайти Репетитора"
+function openSearchModal() {
+    document.getElementById('searchModal').style.display = 'flex'; // Використовуємо flex для центрування
+}
+
+// Функція для відкриття модального вікна "Запитання"
+function openQuestionModal() {
+    document.getElementById('questionModal').style.display = 'flex'; // Використовуємо flex для центрування
+}
+
+// Додаємо обробники подій до кнопок для відкриття модальних вікон
+document.getElementById('openBecomeModalButton').addEventListener('click', openBecomeModal);
+document.getElementById('openSearchModalButton').addEventListener('click', openSearchModal);
+document.getElementById('openQuestionModalButton').addEventListener('click', openQuestionModal);
+
+// Функція для закриття модальних вікон
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+}
+
+// Закриття модального вікна при натисканні на хрестик
+document.querySelectorAll('.close').forEach(closeButton => {
+    closeButton.addEventListener('click', function() {
+        closeModal(this.closest('.modal').id); // Закриваємо модальне вікно, в якому знаходиться кнопка закриття
     });
 });
 
-// Закриваємо модальне вікно при натисканні поза ним
-window.onclick = function(event) {
-    const modal = document.getElementById("myModal");
-    if (event.target == modal) {
-        modal.style.display = "none"; // Закрити модальне вікно
-    }
-}
-
-// Функція для відкриття модального вікна
-function openModal(modalType) {
-    if (modalType === 'search') {
-        document.getElementById('searchModal').style.display = 'flex'; // Відкриваємо модальне вікно пошуку
-    } else if (modalType === 'become') {
-        document.getElementById('becomeModal').style.display = 'flex'; // Відкриваємо модальне вікно 'стати'
-    }
-}
+// Закриття модального вікна при натисканні поза модальним контентом
+window.addEventListener('click', function(event) {
+    const modals = [
+        document.getElementById('becomeModal'), 
+        document.getElementById('searchModal'), 
+        document.getElementById('questionModal')
+    ];
+    
+    modals.forEach(modal => {
+        if (event.target === modal) {
+            closeModal(modal.id);
+        }
+    });
+});
