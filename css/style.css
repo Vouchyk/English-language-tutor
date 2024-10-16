@@ -4,19 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-}
-
-h2 {
-    font-size: 32px;
-    color: #333;
-    text-align: left;
-}
-
-p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 20px;
+    scroll-behavior: smooth;
 }
 
 /*СТИЛІ ДЛЯ ГОЛОВА*/ 
@@ -59,7 +47,7 @@ header.transparent + .language-banner {
 
 .logoIzi {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #1B3955; /* Колір для слова "Izi" */
 }
 
@@ -397,59 +385,29 @@ nav, .phone {
     height: auto;
 }
 
-/* Адаптація для великих екранів (понад 1200px) */
-@media (min-width: 1200px) {
-    .language-banner {
-        flex-direction: row; /* Розташування елементів по рядку */
+/* Адаптація під екрани до 1024px */
+@media (max-width: 1024px) {
+
+    .text-container h2{
+        font-size: 1.8rem;
     }
 
-    .icons {
-        margin-left: 300px;
-        width: 150px;
-    }
-}
-
-/* Адаптація для середніх екранів (від 768px до 1199px) */
-@media (max-width: 1199px) and (min-width: 768px) {
-    .language-banner {
-        flex-direction: column; /* Розташування елементів по колонці */
-        align-items: center;
-        text-align: center;
-    }
-
-    .text-container {
-        max-width: 100%;
-        text-align: center;
-    }
-    
     .text-container p{
-        white-space: nowrap;
-    }
-
-    /* Приховуємо іконку на середніх екранах */
-    .icons {
-        display: none;
+        font-size: 1rem;
     }
     
-    .buttons-container {
-        width: 100%;
+    .buttons-container{
         display: flex;
-        align-items: center;
-        flex-direction: column;
+        text-align: center;
     }
 
-    /* Центруємо кнопки без додаткових margin */
-    .button_language {
-        margin: 1em 0; /* Відступ між кнопками зверху і знизу */
-        min-width: 10em; /* Мінімальна ширина */
-        max-width: 20em; /* Максимальна ширина */
-        flex-grow: 1;
-        text-align: center; /* Центруємо текст всередині кнопки */
+    .button_language{
+        font-size: 20px;
+        width: 8em;
     }
 
-    .button_language:last-of-type {
-        margin: 1em 0 1em 2em;
-        text-align: center; /* Центруємо текст всередині кнопки */
+    .icons img{
+        width: 150px;
     }
 }
 
@@ -459,6 +417,7 @@ nav, .phone {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        width: 70%;
     }
 
     .text-container {
@@ -505,7 +464,7 @@ nav, .phone {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 15px; /* Зменшений внутрішній відступ */
+        width: 70%;
     }
 
     .text-container {
@@ -765,8 +724,6 @@ nav, .phone {
 
 
 
-
-
 /*СТИЛІ ДЛЯ РІЗНІ НАПРЯМКИ*/
 .learning-directions {
     text-align: center;
@@ -913,126 +870,120 @@ nav, .phone {
 
 
 
-/* СТИЛІ ДЛЯ СЕКЦІЇ ПЕРЕВАГ */
 .advantages {
-    padding: 0;
-    margin: 0;
-    background-color: #FFF8E0; /* Колір фону секції */
-    text-align: center;
-    width: 100%;
+    background-color: #FFFAEB; /* Світло-сірий фон для секції */
+    padding: 60px 20px; /* Внутрішні відступи */
+    text-align: left; /* Вирівнюємо текст вліво */
 }
 
 .advantages-header {
-    display: flex; /* Використовуємо Flexbox для вирівнювання */
-    justify-content: space-between; /* Простір між заголовком та текстом */
-    align-items: center; /* Вирівнюємо по верхньому краю */
-    margin-bottom: 40px; /* Відстань між заголовком та сіткою переваг */
+    display: flex; /* Використовуємо флекс-контейнер */
+    justify-content: center; /* Центруємо елементи */
+    align-items: center; /* Центруємо елементи по вертикалі */
+    margin-bottom: 40px; /* Відступ між заголовком і контентом */
 }
 
-.advantages h1 {    
-    font-size: 36px;
-    color: #333;
-    margin: 0; /* Відсутність відступів для заголовка */
-    text-align: center;
-    margin: 0 8em;
+.advantages-header h1 {
+    font-size: 3rem; /* Розмір шрифту для заголовка */
+    color: #2C3E50; /* Темно-синій колір заголовка */
+    margin-bottom: 10px; /* Відступ під заголовком */
+    text-align: center; /* Центруємо текст заголовка */
+    flex-basis: 100%; /* Задаємо ширину для заголовка, щоб зайняти всю ширину */
+    margin: 0;
 }
 
 .advantages-content {
-    font-size: 18px; /* Розмір шрифту для опису */
-    color: #666; /* Колір тексту */
-    max-width: 50%; /* Обмеження ширини текстового блоку */
-    text-align: left;
-}
-
-.arrows-container {
-    display: flex; /* Вирівнювання стрілок в один ряд */
-    align-items: center; /* Вертикальне вирівнювання стрілок */
-    position: relative;
-}
-
-.arrow { 
-    margin: 0 5px; /* Відстань між стрілками */
-    width: 50px; /* Встановіть потрібний розмір стрілок */
-    height: auto; /* Автоматичне збереження пропорцій */
-    position: relative;
-}
-
-.arrow:nth-child(1) {
-    top: 20%; /* Зміщення першої стрілки вниз на 20% */
-}
-
-.arrow:nth-child(2) {
-    top: 0; /* Ніякого зміщення для другої стрілки */
-}
-
-.arrow:nth-child(3) {
-    top: -20%; /* Зміщення третьої стрілки вгору на 20% */
-}
-
-.line {
-    width: 28em; /* Встановіть ширину лінії */
-    height: 0.2em; /* Встановіть висоту лінії */
-    background-color: #333; /* Колір лінії */
-    margin-left: 10px; /* Відстань між стрілкою та лінією */
-    rotate: 90deg;
-}
-
-.advantages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Адаптивна сітка */
-    gap: 40px; /* Відстань між колонками */
-    padding: 20px; /* Внутрішні відступи для сітки */
-    margin: 0 auto; /* Центрування сітки */
-    max-width: 1200px; /* Максимальна ширина сітки */
+    margin: 0 auto; /* Центруємо текст */
+    align-items: left;
+    max-width: 800px; /* Максимальна ширина контенту */
+    position: relative; /* Додаємо позицію, щоб мати контроль над розташуванням */
+    text-align: center; /* Центруємо текст всередині контенту */
 }
 
 .advantage-item {
-    background-color: #fff; /* Колір фону для кожного блоку */
-    padding: 20px; /* Внутрішні відступи */
-    border-radius: 10px; /* Заокруглення країв */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тінь для ефекту об'єму */
-    text-align: left; /* Вирівнювання тексту */
+    display: flex; /* Використовуємо флекс для вирівнювання стрілок з текстом */
+    justify-content: center; /* Центруємо стрілку і текст */
+    align-items: center; /* Вирівнюємо елементи по вертикалі */
+    margin-bottom: 20px; /* Відступ між абзацами */
+
+    border-radius: 15px; /* Заокруглені кути */
+    padding: 20px; /* Внутрішні відступи для блоків */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тінь для блоків */
+    transition: transform 0.3s, box-shadow 0.3s; /* Анімація при наведенні */
+    background-color: #D7E6D2;
 }
 
-.advantage-item h3 {
-    font-size: 24px; /* Розмір заголовка у блоці */
-    color: #333; /* Колір заголовка */
-    margin-bottom: 10px; /* Відстань між заголовком і списком */
+.arrow {
+    font-size: 2rem; /* Розмір шрифту для стрілки */
+    margin-right: 10px; /* Відступ між стрілкою і текстом */
+    color: #2C3E50; /* Колір стрілки */
 }
 
-.advantage-item ul {
-    list-style-type: disc; /* Додаємо стандартні маркери у вигляді кругів */
-    padding-left: 20px; /* Додаємо відступ зліва для списку */
-    margin: 0; /* Відсутність додаткових відступів для списку */
-
-    font-style: normal;
-    font-weight: 700;
-    font-weight: 400;
+.advantages-content p {
+    font-size: 1.2rem; /* Розмір шрифту для абзаців */
+    color: #34495E; /* Колір тексту */
+    line-height: 1.5; /* Висота рядка для кращої читабельності */
+    margin: 0; /* Прибираємо відступи, щоб краще центрувати */
 }
 
-.advantage-item li {
-    font-size: 16px; /* Розмір тексту у списках */
+.advantages-grid {
+    display: grid; /* Використовуємо грід для розташування блоків */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Автоматична адаптація колонок */
+    gap: 50px; /* Відстань між блоками */
+    margin-top: 40px; /* Відступ над сіткою переваг */
+}
+
+.advantage-grid-item {
+    border-radius: 15px; /* Заокруглені кути */
+    padding: 20px; /* Внутрішні відступи для блоків */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тінь для блоків */
+    transition: transform 0.3s, box-shadow 0.3s; /* Анімація при наведенні */
+    text-align: left; /* Вирівнюємо текст по лівій стороні */
+    background-color: #fff; /* Білий фон для блоків */
+}
+
+.advantage-grid-item:hover {
+    transform: translateY(-5px); /* Підйом блока при наведенні */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Підсилена тінь при наведенні */
+}
+
+.advantage-grid-item img {
+    max-width: 100%; /* Адаптація зображення */
+    height: auto; /* Пропорційне масштабування */
+    border-radius: 10px; /* Заокруглення зображення */
+}
+
+.advantage-grid-item h3 {
+    font-size: 1.5rem; /* Розмір заголовка у блоках */
+    color: #2C3E50; /* Колір заголовка */
+    margin: 15px 0; /* Відступи над і під заголовком */
+}
+
+.advantage-content {
+    margin-top: 15px; /* Відступи над вмістом */
+}
+
+.advantage-content ul {
+    list-style-type: disc; /* Повертаємо маркери для списків */
+    padding-left: 20px; /* Відступи для списків */
+}
+
+.advantage-content li {
+    font-size: 1.2rem; /* Збільшено розмір тексту в списку */
+    color: #000000; /* Колір тексту списку */
+    font-weight: 500;
+}
+
+.advantage-content p {
+    font-size: 1rem; /* Збільшено розмір тексту під заголовком */
     color: #000000; /* Колір тексту */
-    margin-bottom: 5px; /* Відстань між пунктами списку */
-
-    font-style: normal;
-    font-weight: 700;
-    font-weight: 400;
+    margin-top: 10px; /* Відступ над текстом */
 }
 
-.advantage-item p {
-    font-style: normal;
-    font-size: 16px;
-
-    color: #000000;
-}
-
-/* Додаткові стилі для покращення візуального сприйняття */
-.advantage-item img {
-    min-height: 75px;
-    width: 76px;
-    object-fit: contain;
-    text-align: left;
+/* Ефект при наведенні на блоки */
+.advantage-item:hover {
+    transform: translateY(-5px); /* Піднімаємо блок при наведенні */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Посилюємо тінь при наведенні */
 }
 
 /* Адаптивність для секції переваг */
@@ -1203,6 +1154,7 @@ nav, .phone {
     display: flex;
     justify-content: center;
     align-items: center;
+    scroll-snap-align: start;
 }
 
 /* Стиль для картки з ціною */
@@ -1330,11 +1282,11 @@ nav, .phone {
     width: 50%;
     height: auto;
 
-    background: rgba(217, 217, 217, 0.48);
+    background-color: #D9D9D9;
     border-radius: 70px;
 
     font-size: 14px;
-    color: #999;
+    color: #6A6A6A;
     margin-top: 10px;
 }
 
@@ -1390,12 +1342,17 @@ nav, .phone {
     }
 
     .header-content img {
-        width: 50px;
+        margin-top: -14px;
+        width: 45px;
     }
 
     .price-details {
         flex-direction: column;
         margin-top: 10px;
+    }
+
+    .price-details .column:nth-child(2){
+        width: 100px;
     }
 
     .price {
@@ -1503,19 +1460,30 @@ nav, .phone {
     font-size: 65px;
 }
 
-.text-content h2{
-    letter-spacing: 3px;
-    margin-bottom: 10px;
+.text-content h2 {
+    font-size: 2.5rem; /* Розмір шрифту для заголовка */
+    font-weight: 700; /* Жирність шрифту */
+    color: #FFFFFF; /* Колір тексту */
+    letter-spacing: 2px; /* Відстань між літерами */
+    margin: 0 0 10px 0; /* Відступи: зверху, знизу, зліва, справа */
+    text-align: left; /* Вирівнювання тексту */
 }
 
-.text-content p{
+.text-content p {
+    font-size: 1.2rem; /* Розмір шрифту для абзацу */
+    color: #FFFFFF; /* Колір тексту */
+    margin: 0; /* Обнуляємо відступи */
+    line-height: 1.5; /* Висота рядка для кращої читабельності */
+    text-align: left; /* Вирівнювання тексту */
     letter-spacing: 3px;
 }
 
-.question-section button {
+.custom-button {
     padding: 10px 20px;
-    margin-right: 23em;
+    margin: 0 auto;
     
+    display: flex;
+
     background: #92BCCA;
     border-radius: 15px;
     color: #1C6E5B;
@@ -1524,13 +1492,38 @@ nav, .phone {
 
     cursor: pointer;
 
-    width: 15%;
+    width: 30%; /* Встановлюємо ширину кнопки до 30% */
+    max-width: 200px; /* Максимальна ширина кнопки */
 
     transition: background-color 0.5s ease;
 }
 
-.question-section button:hover{
+.custom-button:hover {
     background-color: #FFF9E1;
+}
+
+/* Планшети і середні екрани */
+@media (max-width: 1024px) {
+    .question-section {
+        height: auto; /* Автоматична висота */
+        padding: 30px; /* Збільшення відступів */
+        flex-direction: column; /* Вирівнюємо елементи по колонці */
+        justify-content: center; /* Центруємо контент */
+        align-items: center; /* Центруємо контент по вертикалі */
+        text-align: center; /* Вирівнюємо текст по центру */
+    }
+
+    .question-section .text-content {
+        margin-left: 0; /* Вирівнювання без відступу зліва */
+        font-size: 45px; /* Зменшений розмір шрифту для читабельності */
+    }
+
+    .question-section .custom-button {
+        margin: 20px 0 0 0; /* Відступ між кнопками */
+        width: 60%; /* Зменшена ширина кнопки */
+        font-size: 20px; /* Збільшений розмір шрифту кнопки */
+        padding: 12px 18px; /* Збільшене наповнення кнопки */
+    }
 }
 
 /* Планшети і середні екрани */
@@ -1549,11 +1542,19 @@ nav, .phone {
         font-size: 40px;
     }
 
-    .question-section button {
+    .question-section .custom-button {
         margin: 20px 0 0 0;
         width: 50%;
         font-size: 18px;
         padding: 10px 15px;
+    }
+
+    .text-content h2 {
+        font-size: 2rem; /* Зменшуємо розмір заголовка на менших екранах */
+    }
+
+    .text-content p {
+        font-size: 1rem; /* Зменшуємо розмір тексту абзацу */
     }
 }
 
@@ -1569,14 +1570,22 @@ nav, .phone {
 
     .question-section .text-content {
         font-size: 30px;
-        margin-left: 0;
+        margin-left: 20px;
     }
 
-    .question-section button {
+    .question-section .custom-button {
         margin: 15px 0 0 0;
         width: 70%;
         font-size: 16px;
         padding: 8px 12px;
+    }
+
+    .text-content h2 {
+        font-size: 1.5rem; /* Зменшуємо розмір заголовка для мобільних пристроїв */
+    }
+
+    .text-content p {
+        font-size: 0.9rem; /* Зменшуємо розмір тексту абзацу для мобільних пристроїв */
     }
 }
 
@@ -1594,7 +1603,7 @@ nav, .phone {
         font-size: 25px;
     }
 
-    .question-section button {
+    .question-section .custom-button {
         width: 80%;
         font-size: 14px;
         padding: 6px 10px;
@@ -1649,7 +1658,6 @@ nav, .phone {
     margin: 0;
     margin-left: 5em;
 }
-
 
 .job-section .button{
     width: 30%;
@@ -1723,7 +1731,6 @@ nav, .phone {
         padding: 10px 12px;
     }
 }
-
 
 
 
@@ -1865,93 +1872,145 @@ nav, .phone {
 
 
 
-/* Адаптивні стилі для модалок */
+/* Загальний стиль для всіх модальних вікон */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
+    display: none; /* Сховати модальне вікно за замовчуванням */
+    position: fixed; /* Фіксоване позиціонування */
+    z-index: 1000; /* Вищий порядок по всіх елементах */
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-    justify-content: center;
-    align-items: center;
+    width: 100%; /* Повна ширина */
+    height: 100%; /* Повна висота */
+    overflow: auto; /* Додаткова прокрутка, якщо потрібно */
+    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон */
+    justify-content: center; /* Центруємо контент */
+    align-items: center; /* Центруємо контент */
 }
 
+/* Стиль для вмісту модального вікна */
 .modal-content {
-    background-color: #fefefe;
-    padding: 30px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    margin: auto;
-    text-align: left;
+    background-color: #fefefe; /* Фоновий колір вмісту */
+    margin: 15% auto; /* Відступ з верхньої частини та центрування */
+    padding: 20px; /* Внутрішні відступи */
+    border: 1px solid #888; /* Обводка */
+    width: 80%; /* Ширина вмісту */
+    max-width: 600px; /* Максимальна ширина вмісту */
+    border-radius: 8px; /* Закруглені кути */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тінь для модального вікна */
 }
 
-.modal-content h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #4CAF50;
-}
-
-.modal input, .modal select {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0 20px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.modal button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-}
-
-.modal button:hover {
-    background-color: #45a049;
-}
-
+/* Стиль для кнопки закриття */
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    color: #aaa; /* Колір кнопки закриття */
+    float: right; /* Вирівнювання вправо */
+    font-size: 28px; /* Розмір шрифту */
+    font-weight: bold; /* Жирний шрифт */
 }
 
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+    color: black; /* Колір при наведенні */
+    text-decoration: none; /* Без підкреслення */
+    cursor: pointer; /* Курсор у вигляді руки */
 }
 
-@media screen and (max-width: 480px) {
-    h1 {
-        font-size: 2rem;
-    }
+/* Стиль для заголовків */
+.modal-content h2 {
+    margin-top: 0; /* Відступи зверху */
+}
 
-    p {
-        font-size: 1rem;
-    }
+/* Стилі для форм */
+form {
+    display: flex; /* Використовуємо флекс для виведення елементів */
+    flex-direction: column; /* Вирівнюємо вертикально */
+}
 
-    .button {
-        padding: 8px 16px;
-    }
+label {
+    margin: 10px 0 5px; /* Відступи для міток */
+}
 
-    .modal-content {
-        width: 95%;
-    }
+/* Стилізація полів вводу */
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+textarea {
+    width: 100%; /* Ширина на всю ширину контейнера */
+    padding: 10px; /* Внутрішні відступи */
+    margin: 8px 0; /* Відступи знизу */
+    border: 1px solid #ccc; /* Обводка */
+    border-radius: 4px; /* Закруглені кути */
+    box-sizing: border-box; /* Включає відступи в загальну ширину */
+
+    margin-bottom: 20px; /* Відступи між полями */
+    width: 100%; /* Повна ширина */
+    box-sizing: border-box; /* Включає відступи в загальну ширину */
+}
+
+/* Для WebKit-браузерів (Chrome, Safari) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Для Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+/* Стилізація текстових областей */
+textarea {
+    resize: vertical; /* Дозволити змінювати розмір тільки по вертикалі */
+    height: 100px;
+}
+
+/* Вирівнювання тексту в кнопці по центру */
+.submit-button {
+    background: #1C6E5B; /* Зелений фон */
+    border: 1px solid #2C2C2C;
+    border-radius: 8px;
+    color: #fff;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    gap: 16px;
+
+    width: 272px;
+    height: 40px;
+
+    font-size: 18px; /* Розмір шрифту кнопки */
+
+    flex: none;
+    order: 4;
+    flex-grow: 1;
+
+    margin: 0 auto; /* Центрує кнопку в формі */
+    transition: background-color 0.3s ease, transform 0.3s, transform 0.3s ease, easebox-shadow 0.3s ease; /* Анімація фону та масштабу */
+}
+
+.submit-button:hover {
+    background-color: #104035; /* Темніший зелений при наведенні */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Додає тінь при наведенні */
+    transform: scale(1.05); /* Збільшує кнопку на 5% */
+    transform: translateY(-3px);
+}
+
+/* Вирівнювання форми */
+#becomeForm {
+    display: flex;
+    flex-direction: column; /* Вертикальне розташування елементів */
+    align-items: left; /* Центрує елементи форми по горизонталі */
+}
+
+#becomeForm img:first-child {
+    margin-bottom: -4px; /* Для першого зображення (ім'я) */
+}
+
+#becomeForm img:last-child {
+    margin-top: -8px; /* Для четвертого зображення (повідомлення) */
+    margin-right: 5px;
 }
