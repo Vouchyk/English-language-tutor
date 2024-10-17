@@ -103,11 +103,12 @@ nav, .phone {
 .phone-icon {
     display: flex;           /* Вирівнюємо іконку телефону по центру */
     align-items: center;     /* Центруємо іконку по вертикалі */
+    margin-right: -10px;
 }
 
 .phone-icon img {
     display: block;          /* Відображаємо як блок */
-    width: 1.7rem;          /* Ширина іконки */
+    width: 1.2rem;          /* Ширина іконки */
     height: auto;           /* Автоматична висота */
     transition: transform 0.3s ease; /* Додаємо перехід для трансформації */
 }
@@ -121,23 +122,16 @@ nav, .phone {
     transition: color 0.3s ease, scale 0.78s ease;
 }
 
-.phone a:hover {
-    color: #ffffff;         /* Зміна кольору тексту при наведенні */
-}
-
-.phone-icon:hover img {
-    transform: scale(1.1);  /* Збільшуємо іконку на 10% при наведенні */
-}
-
 .phone span {
     margin-left: 0.5em;     /* Відстань між іконкою та номером */
-    transition: color 0.7s ease, transform 0.5s ease; /* Додаємо перехід для кольору та трансформації */
+    transition: color 0s ease, transform 0.5s ease; /* Додаємо перехід для кольору та трансформації */
+    font-weight: 400;
 }
 
-/* Зміна кольору тексту номера телефону при наведенні */
 .phone a:hover span {
-    color: #007BFF;         /* Зміна кольору номера телефону при наведенні */
-    transform: scale(1.2);  /* Збільшуємо номер телефону на 20% при наведенні */
+    font-weight: bold;
+    color: #1C6E5B;         /* Зміна кольору номера телефону при наведенні */
+    transform: scale(1.1);  /* Збільшуємо номер телефону на 20% при наведенні */
 }
 
 .hamburger {
@@ -211,6 +205,12 @@ nav, .phone {
         color: #fff; /* Колір тексту при наведенні */
         transform: scale(1.05); /* Легке збільшення при наведенні */
     }    
+
+    .phone-icon img {
+        display: block;          /* Відображаємо як блок */
+        width: 1.5rem;          /* Ширина іконки */
+        height: auto;           /* Автоматична висота */
+    }
     
     .hamburger {
         display: block; /* Зробіть видимим гамбургер */
@@ -307,7 +307,7 @@ nav, .phone {
     flex-direction: column;
     gap: 5px; /* Зменшений відступ між абзацами */
     width: 100%;
-    max-width: 600px; /* Контроль ширини контейнера */
+    max-width: 70%;
     text-align: center; /* Вирівнюємо текст по центру */
 }
 
@@ -461,13 +461,15 @@ nav, .phone {
 /* Адаптація для дуже маленьких екранів (до 480px) */
 @media (max-width: 480px) {
     .language-banner {
+        margin-top: 7em;
+        margin-bottom: -3em;
         flex-direction: column;
         align-items: center;
         text-align: center;
         width: 70%;
     }
 
-    .text-container {
+    #language-banner .text-container {
         width: 100%;
         padding: 0 10px; /* Додаємо відступи для тексту */
     }
@@ -570,7 +572,11 @@ nav, .phone {
 
 /* Контейнер для тексту */
 .text-container {
-    max-width: 60%; /* Обмеження ширини текстового контейнера */
+    max-width: 70%; /* Обмеження ширини текстового контейнера */
+}
+
+#free-lesson .text-container p:last-of-type {
+    margin-top: -15px;
 }
 
 /* Контейнер для кнопки */
@@ -612,7 +618,7 @@ nav, .phone {
 .free-lesson .button:hover {
     background-color: #92BCCA;
     color: #000;
-    font-size: 1.7em;
+    font-size: 1.5em;
 }
 
 /* Стилі для іконок */
@@ -898,6 +904,8 @@ nav, .phone {
     max-width: 800px; /* Максимальна ширина контенту */
     position: relative; /* Додаємо позицію, щоб мати контроль над розташуванням */
     text-align: center; /* Центруємо текст всередині контенту */
+    margin-right: 250px;
+    margin-left: -250px;
 }
 
 .advantage-item {
@@ -910,20 +918,21 @@ nav, .phone {
     padding: 20px; /* Внутрішні відступи для блоків */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тінь для блоків */
     transition: transform 0.3s, box-shadow 0.3s; /* Анімація при наведенні */
-    background-color: #D7E6D2;
+    background-color: #1C6E5B;
 }
 
 .arrow {
     font-size: 2rem; /* Розмір шрифту для стрілки */
     margin-right: 10px; /* Відступ між стрілкою і текстом */
-    color: #2C3E50; /* Колір стрілки */
+    color: white;
 }
 
 .advantages-content p {
     font-size: 1.2rem; /* Розмір шрифту для абзаців */
-    color: #34495E; /* Колір тексту */
+    color: white;
     line-height: 1.5; /* Висота рядка для кращої читабельності */
     margin: 0; /* Прибираємо відступи, щоб краще центрувати */
+    text-align: left;
 }
 
 .advantages-grid {
@@ -931,6 +940,8 @@ nav, .phone {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Автоматична адаптація колонок */
     gap: 50px; /* Відстань між блоками */
     margin-top: 40px; /* Відступ над сіткою переваг */
+    background-color: #FFFAEB;
+    margin-top: 0;
 }
 
 .advantage-grid-item {
@@ -986,6 +997,61 @@ nav, .phone {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Посилюємо тінь при наведенні */
 }
 
+/* Адаптивність для секції переваг від 1920px до 1024px */
+@media (min-width: 1024px) and (max-width: 1920px) {
+    .advantages-header {
+        flex-direction: row; /* Заголовок і стрілки в рядок */
+        justify-content: space-between; /* Вирівнювання простору між елементами */
+        text-align: left; /* Вирівнювання тексту ліворуч */
+        margin-bottom: 30px; /* Трохи більше відступу */
+    }
+
+    .advantages h1 {
+        font-size: 36px; /* Трохи зменшення заголовка */
+        margin: 0 0 1.5em 3em; /* Відступи для заголовка */
+    }
+
+    .arrows-container {
+        margin-bottom: 30px; /* Більше відступу між стрілками і текстом */
+    }
+
+    .advantages-content {
+        max-width: 80%; /* Оптимальна ширина тексту */
+        font-size: 18px; /* Трохи зменшений розмір тексту */
+        margin: auto; /* Центрування тексту */
+        margin-right: 300px;
+    }
+
+    .line {
+        width: 30em; /* Трохи більша ширина лінії */
+    }
+
+    .advantages-grid {
+        grid-template-columns: repeat(3, 1fr); /* Три колонки в сітці */
+        gap: 30px; /* Збільшення відстані між колонками */
+        padding: 20px; /* Відступи */
+    }
+
+    .advantage-item {
+        width: 100%;
+        padding: 20px; /* Більші відступи */
+        font-size: 16px; /* Трохи більший шрифт */
+    }
+
+    .advantage-item h3 {
+        font-size: 24px; /* Збільшення розміру заголовка */
+    }
+
+    .advantage-item ul {
+        font-size: 16px; /* Трохи більший шрифт для списків */
+    }
+
+    .advantage-item img {
+        min-height: 70px;
+        width: 70px; /* Більший розмір зображень */
+    }
+}
+
 /* Адаптивність для секції переваг */
 @media (max-width: 1024px) {
     .advantages-header {
@@ -997,7 +1063,7 @@ nav, .phone {
 
     .advantages h1 {
         font-size: 28px; /* Зменшення розміру заголовка */
-        margin: 0 2em;
+        margin: 0 2em 1em 2em;
     }
 
     .arrows-container {
@@ -1007,6 +1073,7 @@ nav, .phone {
     .advantages-content {
         max-width: 70%; /* Збільшення ширини тексту для більшої читабельності */
         font-size: 16px; /* Зменшення розміру тексту */
+        margin: auto;
     }
 
     .line {
@@ -1046,8 +1113,18 @@ nav, .phone {
     }
 
     .advantages h1 {
-        font-size: 24px; /* Зменшення заголовка для мобільних */
-        margin: 0 1em; /* Зменшення полів */
+        font-size: 28px; /* Зменшення розміру заголовка */
+        margin: 0 2em 1em 2em;
+    }
+
+    .arrows-container {
+        margin-bottom: 20px; /* Додатковий відступ між стрілками і текстом */
+    }
+
+    .advantages-content {
+        max-width: 70%; /* Збільшення ширини тексту для більшої читабельності */
+        font-size: 16px; /* Зменшення розміру тексту */
+        margin: auto;
     }
 
     .arrows-container {
@@ -1056,7 +1133,7 @@ nav, .phone {
     }
 
     .arrow {
-        margin: 10px 0; /* Відстань між стрілками по вертикалі */
+        margin: 10px 10px; /* Відстань між стрілками по вертикалі */
         width: 40px; /* Зменшення розміру стрілок */
     }
 
@@ -1100,17 +1177,22 @@ nav, .phone {
     }
 
     .advantages h1 {
-        font-size: 20px; /* Заголовок ще менший для маленьких екранів */
-        margin: 0 0.5em; /* Менший відступ для заголовка */
+        font-size: 30px; /* Заголовок ще менший для маленьких екранів */
+        margin: 0 2em 1em 2em;
     }
 
     .arrows-container {
-        display: none; /* Вимкнення стрілок для дуже малих екранів */
+        margin-bottom: 20px;
     }
 
     .advantages-content {
         max-width: 100%; /* Текст на всю ширину */
         font-size: 12px; /* Маленький текст */
+        margin: auto;
+    }
+
+    .advantages-content p{
+        font-size: 1rem;
     }
 
     .line {
@@ -1259,7 +1341,7 @@ nav, .phone {
     font-weight:bolder;
     align-self: flex-end;
     display:block;  
-    margin-top: -60px; 
+    margin-bottom: 0px; 
     margin-left: 120px; 
 }
 
@@ -1268,7 +1350,7 @@ nav, .phone {
     font-size: 18px;
     color: #666;
     align-self: flex-end; 
-    margin-bottom: 0;
+    margin-bottom: 5px;
     margin-left: -32px;
 }
 
@@ -1577,7 +1659,7 @@ nav, .phone {
         margin: 15px 0 0 0;
         width: 70%;
         font-size: 16px;
-        padding: 8px 12px;
+        padding: 8px 12px 8px 25px;
     }
 
     .text-content h2 {
@@ -1606,7 +1688,7 @@ nav, .phone {
     .question-section .custom-button {
         width: 80%;
         font-size: 14px;
-        padding: 6px 10px;
+        padding: 8px 12px 8px 35px;
     }
 }
 
@@ -1634,7 +1716,7 @@ nav, .phone {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 2.5rem;
 
     color: #000000;
 
@@ -1647,7 +1729,7 @@ nav, .phone {
 
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.2rem;
     letter-spacing: 0.5px;
 
     color: #000000;
@@ -1661,6 +1743,7 @@ nav, .phone {
 
 .job-section .button{
     width: 30%;
+    height: auto;
 
     background-color: #276c56;
     color: #ffffff;
@@ -1669,6 +1752,7 @@ nav, .phone {
 
     padding: 15px 20px;
     margin-top: 10px;
+    margin-bottom: 20px;
     border-radius: 25px;
 
     cursor: pointer;
@@ -1683,6 +1767,30 @@ nav, .phone {
     font-size: 25px;
 }
 
+/* Адаптивність для екранів від 1024px */
+@media (max-width: 1024px) {
+    .job-section {
+        width: 60%; /* Трохи більше ширини для середніх екранів */
+        padding: 25px; /* Додаткові відступи */
+    }
+
+    .job-section h2 {
+        font-size: 2.2rem; /* Трохи зменшений розмір заголовка */
+    }
+
+    .job-section p {
+        width: 85%; /* Більша ширина для тексту */
+        font-size: 1rem; /* Трохи зменшений шрифт */
+        margin-left: 4em; /* Корекція відступів */
+    }
+
+    .job-section .button {
+        width: 40%; /* Трохи більша кнопка */
+        font-size: 18px; /* Трохи менший розмір тексту */
+        padding: 14px 18px; /* Корекція відступів */
+    }
+}
+
 /* Планшети і менші екрани */
 @media (max-width: 768px) {
     .job-section {
@@ -1691,12 +1799,12 @@ nav, .phone {
     }
 
     .job-section h2 {
-        font-size: 24px;
+        font-size: 1.9rem; /* Трохи зменшений розмір заголовка */
     }
 
     .job-section p {
         width: 90%;
-        font-size: 18px;
+        font-size: 1rem;
         margin-left: 3em;
     }
 
@@ -1715,14 +1823,14 @@ nav, .phone {
     }
 
     .job-section h2 {
-        font-size: 20px;
+        font-size: 1.5rem;
     }
 
     .job-section p {
         width: 100%;
-        font-size: 16px;
+        font-size: 0.9rem;
         margin-left: 0;
-        text-align: center; /* Центрування тексту для мобільних пристроїв */
+        text-align: left; /* Центрування тексту для мобільних пристроїв */
     }
 
     .job-section .button {
@@ -1831,6 +1939,17 @@ nav, .phone {
     gap: 10px;
     white-space: nowrap;
 }
+
+.footer-contact a {
+    color: #b1b1b1;
+    text-decoration: none; /* Заборонити підкреслення посилання */
+    transition: color 0.3s ease; /* Додати плавний перехід для кольору */
+}
+
+.footer-contact a:hover {
+    color: #fff; /* Змінити колір на білий при наведенні */
+}
+
 
 .phone-icon {
     background: url('phone-icon.png') no-repeat;
