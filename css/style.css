@@ -283,6 +283,19 @@ nav,
   }
 }
 
+@media (max-width: 480px){
+  .logo{
+    margin-left: -20px;
+  }
+
+  .logo-text {
+    font-size: 1.5em;
+  }
+}
+
+
+
+
 /*СТИЛІ ДЛЯ АНГЛІЙСЬКА ДЛЯ ВСІХ*/
 .language-banner {
   background: linear-gradient(90deg, #1c6e5b 0%, #43b99e 100%);
@@ -772,7 +785,7 @@ nav,
   width: 80px;
   height: auto;
   margin-right: 15px; /* Трохи менший відступ між картинкою і текстом */
-  border-radius: 20px;
+  border-radius: 20px
 }
 
 .learning-text {
@@ -1476,7 +1489,8 @@ nav,
   }
 
   .header-content img {
-    width: 40px;
+    width: 60px;
+    margin: 0;
   }
 
   .price-details {
@@ -2009,8 +2023,8 @@ nav,
     justify-content: flex-start; /* Вирівнювання логотипу зліва */
   }
 
-  .footer-logo img {
-    width: 35px; /* Зменшити розмір логотипу */
+  .footer-img {
+    width: 70px; /* Зменшити розмір логотипу */
   }
 
   .footer-links,
@@ -2029,21 +2043,34 @@ nav,
   }
 
   .footer-contact {
+    display: flex;
     justify-content: center; /* Вирівнювання контактів по центру */
     gap: 5px; /* Зменшення відстані між іконкою та текстом */
   }
 
   .phone-icon {
+    margin-right: 10px;
     width: 20px; /* Зменшити іконку телефону */
     height: 20px;
   }
 }
 
 @media (max-width: 768px) {
+  .footer-section{
+    align-items: flex-start; /* Вирівнювання по лівому краю */
+  }
+
   .footer-content {
     flex-direction: column; /* Вертикальне розташування елементів */
     align-items: flex-start; /* Вирівнювання по лівому краю */
-    gap: 20px;
+  }
+
+  .footer-img{
+    margin-left: -20px;
+  }
+
+  .footer-links{
+    margin-top: -20px;
   }
 
   .footer-links,
@@ -2053,8 +2080,8 @@ nav,
 }
 
 @media (max-width: 480px) {
-  .footer-logo img {
-    width: 30px; /* Менший логотип для мобільних пристроїв */
+  .footer-img {
+    width: 60px; /* Менший логотип для мобільних пристроїв */
   }
 
   .logo-izi,
