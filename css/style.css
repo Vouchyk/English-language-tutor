@@ -1858,7 +1858,6 @@ nav,
   display: flex;
   justify-content: center; /* Вирівнювання по центру */
   align-items: center;
-  border-radius: 10px;
   height: auto;
 }
 
