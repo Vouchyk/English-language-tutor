@@ -3,40 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css?v=1.0"/>
+    <link rel="stylesheet" href="css/style.css?v=1.0" />
     <title>Репетиторство Онлайн</title>
   </head>
   <body>
-
     <header>
       <div class="logo">
-          <img src="./img/logo.png" alt="iziBloom Logo" />
+        <img src="./img/logo.png" alt="iziBloom Logo" class="logo-img" />
+        <h1 class="logo-text">
           <span class="logoIzi">izi</span>Bloom
+        </h1>
       </div>
-  
-      <nav class="hidden" id="nav"> <!-- Додано id="nav" -->
-          <ul>
-              <li><a href="#learning-directions">Напрямки</a></li>
-              <li><a href="#free-lesson">Пробний урок</a></li>
-              <li><a href="#prices">Вартість</a></li>
-          </ul>
+
+      <nav class="hidden" id="nav">
+        <!-- Додано id="nav" -->
+        <ul>
+          <li><a href="#learning-directions">Напрямки</a></li>
+          <li><a href="#free-lesson">Пробний урок</a></li>
+          <li><a href="#prices">Вартість</a></li>
+          <li><a href="#footer">Контакти</a></li>
+        </ul>
       </nav>
-  
+
       <div class="phone">
-          <a href="tel:0672903393">
-              <div class="phone-icon">
-                  <img src="./img/phone-header.png" alt="Phone Icon" />
-              </div>
-              <span>067 290 33 93</span>
-          </a>
+        <a href="tel:0672903393">
+          <div class="phone-icon">
+            <img src="./img/phone-header.png" alt="Phone Icon" />
+          </div>
+          <span>067 290 33 93</span>
+        </a>
       </div>
-  
+
       <div class="hamburger" id="hamburger">
-          <div></div>
-          <div></div>
-          <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-   </header>
+    </header>
 
     <section class="language-banner">
       <div class="text-container">
@@ -51,9 +54,9 @@
         <div class="button_language">Для діток</div>
         <div class="icons">
           <img src="./img/children-icon.png" alt="Іконка для діток" />
-        </div>  
+        </div>
         <div class="button_language">Для дорослих</div>
-      </div>      
+      </div>
     </section>
 
     <section id="free-lesson" class="free-lesson">
@@ -64,15 +67,21 @@
       </div>
 
       <div class="button-container">
-        <a href="javascript:void(0);" id="openBecomeModalButton" class="button" onclick="openModal('search') ">Записатися на пробний урок</a>
+        <a
+          href="javascript:void(0);"
+          id="openBecomeModalButton"
+          class="button"
+          onclick="openModal('search') "
+          >Записатися на пробний урок</a
+        >
       </div>
 
       <div class="image-container">
         <img
-          src="img/free_lesson/підвищенн рівня.png" 
+          src="img/free_lesson/підвищенн рівня.png"
           alt="Communications Icon"
           class="icon-1"
-          style="width: 140px; height: auto;"
+          style="width: 140px; height: auto"
         />
         <img
           src="img/free_lesson/free_communication-removebg-preview.png"
@@ -83,7 +92,7 @@
           src="img/free_lesson/communications-removebg-preview.png"
           alt="Friendly Icon"
           class="icon-3"
-          style="width: 100px; height:auto;"
+          style="width: 100px; height: auto"
         />
         <img
           src="img/free_lesson/grow_up-removebg-preview.png"
@@ -101,36 +110,77 @@
     <!-- Модальне вікно "Задай питання" -->
     <div id="becomeModal" class="modal become-modal">
       <div class="modal-content">
-        <span class="close" onclick="document.getElementById('becomeModal').style.display='none'">&times;</span>
-    
+        <span
+          class="close"
+          onclick="document.getElementById('becomeModal').style.display='none'"
+          >&times;</span
+        >
+
         <form id="becomeForm">
-          <label for="becomeName"><img src="./img/modal_window/person.png" alt="">Ім'я:</label>
-          <input type="text" id="becomeName" name="name" placeholder="Введіть ваше ім'я" required />
-    
+          <label for="becomeName"
+            ><img src="./img/modal_window/person.png" alt="" />Ім'я:</label
+          >
+          <input
+            type="text"
+            id="becomeName"
+            name="name"
+            placeholder="Введіть ваше ім'я"
+            required
+          />
+
           <label for="becomePhone">
-            <img src="./img/modal_window/Phone.png" alt="">Телефон:
+            <img src="./img/modal_window/Phone.png" alt="" />Телефон:
           </label>
-          <input type="tel" id="becomePhone" name="phone" placeholder="Введіть номер телефону" 
-               required pattern="[0-9]{10,15}" title="Введіть правильний номер телефону (10-15 цифр)" />        
-    
-          <label for="becomeAge"><img src="./img/modal_window/age.png" alt="">Вік:</label>
-          <input type="number" id="becomeAge" name="age" placeholder="Введіть ваш вік" required />
-    
-          <label for="becomeMessage"><img src="./img/modal_window/message.png" alt="">Повідомлення:</label>
-          <textarea id="becomeMessage" name="message" placeholder="Ваше повідомлення" required></textarea>
-    
+          <input
+            type="tel"
+            id="becomePhone"
+            name="phone"
+            placeholder="Введіть номер телефону"
+            required
+            pattern="[0-9]{10,15}"
+            title="Введіть правильний номер телефону (10-15 цифр)"
+          />
+
+          <label for="becomeAge"
+            ><img src="./img/modal_window/age.png" alt="" />Вік:</label
+          >
+          <input
+            type="number"
+            id="becomeAge"
+            name="age"
+            placeholder="Введіть ваш вік"
+            required
+          />
+
+          <label for="becomeMessage"
+            ><img
+              src="./img/modal_window/message.png"
+              alt=""
+            />Повідомлення:</label
+          >
+          <textarea
+            id="becomeMessage"
+            name="message"
+            placeholder="Ваше повідомлення"
+            required
+          ></textarea>
+
           <input type="hidden" name="form_type" value="become_tutor" />
-    
+
           <button type="submit" class="submit-button">Записатися</button>
         </form>
       </div>
-    </div>    
+    </div>
 
     <section id="learning-directions" class="learning-directions">
       <h1>Різні напрямки навчання</h1>
       <div class="learning-grid">
         <div class="learning-item">
-          <img src="./img/areas/english.png" alt="Навчання з 0" style="background-color: #FFE4CB;"/>
+          <img
+            src="./img/areas/english.png"
+            alt="Навчання з 0"
+            style="background-color: #ffe4cb"
+          />
           <div class="learning-text">
             <h3>Для початківців: навчання з 0</h3>
             <p>Ти опануєш основи граматики</p>
@@ -138,7 +188,11 @@
           </div>
         </div>
         <div class="learning-item">
-          <img src="./img/areas/book.png" alt="Для школярів" style="background-color: #FFC0C0;"/>
+          <img
+            src="./img/areas/book.png"
+            alt="Для школярів"
+            style="background-color: #ffc0c0"
+          />
           <div class="learning-text">
             <h3>Для школярів: допомога з домашнім завданням</h3>
             <p>Домашнє завдання простіше й зрозуміліше з нами!</p>
@@ -146,7 +200,11 @@
           </div>
         </div>
         <div class="learning-item">
-          <img src="./img/areas/pencil.png" alt="Навчання з іграми" style="background-color: #F6E8FF;"/>
+          <img
+            src="./img/areas/pencil.png"
+            alt="Навчання з іграми"
+            style="background-color: #f6e8ff"
+          />
           <div class="learning-text">
             <h3>Для діток: цікаве навчання з іграми</h3>
             <p>Вивчайте нові знання через гру і радість.</p>
@@ -154,7 +212,9 @@
           </div>
         </div>
         <div class="learning-item">
-          <img src="./img/areas/learning_eng.png" alt="Для дорослих" style="background-color: #CBECFF;"/>
+          <div style="background-color: #cbecff; border-radius: 20px">
+            <img src="./img/areas/learning_eng.png" alt="Для дорослих" />
+          </div>
           <div class="learning-text">
             <h3>Для дорослих: продуктивне та цікаве навчання</h3>
             <p>Практикуй мовлення, слухання, читання та граматику.</p>
@@ -162,7 +222,11 @@
           </div>
         </div>
         <div class="learning-item">
-          <img src="./img/areas/notebook.png" alt="НМТ/ЗНО" style="background-color: #D9FFE0;"/>
+          <img
+            src="./img/areas/notebook.png"
+            alt="НМТ/ЗНО"
+            style="background-color: #d9ffe0"
+          />
           <div class="learning-text">
             <h3>НМТ / ЗНО: підготовка з успіхом</h3>
             <p>Підготовка, яка відкриває двері</p>
@@ -170,7 +234,11 @@
           </div>
         </div>
         <div class="learning-item">
-          <img src="./img/areas/pen.png" alt="Загальна англійська" style="background-color: #FFFACB;"/>
+          <img
+            src="./img/areas/pen.png"
+            alt="Загальна англійська"
+            style="background-color: #fffacb"
+          />
           <div class="learning-text">
             <h3>Загальна англійська: корисний розвиток</h3>
             <p>
@@ -186,91 +254,101 @@
       <div class="advantages-header">
         <h1>Наші переваги</h1>
         <div class="advantages-content">
-            <div class="advantage-item">
-                <div class="arrow">&#8594;</div>
-                <p>Зосередившись на своїх інтересах і потребах, ви швидко досягнете значних результатів. У нашій школі індивідуальний підхід допоможе вам розвиватися у власному темпі.</p>
-            </div>
-            <div class="advantage-item">
-                <div class="arrow">&#8594;</div>
-                <p>Не витрачайте час — оберіть ідеальну атмосферу для навчання, де підтримка викладача зробить процес вивчення ефективнішим і приємнішим. Розпочніть свою мовну подорож вже сьогодні.</p>
-            </div>
-            <div class="advantage-item">
-                <div class="arrow">&#8594;</div>
-                <p>Вивчення англійської мови онлайн — це зручно та цікаво! Індивідуальні уроки допоможуть швидше подолати страх спілкування та отримати знання в комфортній атмосфері.</p>
-            </div>
-        </div>       
+          <div class="advantage-item">
+            <div class="arrow">&#8594;</div>
+            <p>
+              Зосередившись на своїх інтересах і потребах, ви швидко досягнете
+              значних результатів. У нашій школі індивідуальний підхід допоможе
+              вам розвиватися у власному темпі.
+            </p>
+          </div>
+          <div class="advantage-item">
+            <div class="arrow">&#8594;</div>
+            <p>
+              Не витрачайте час — оберіть ідеальну атмосферу для навчання, де
+              підтримка викладача зробить процес вивчення ефективнішим і
+              приємнішим. Розпочніть свою мовну подорож вже сьогодні.
+            </p>
+          </div>
+          <div class="advantage-item">
+            <div class="arrow">&#8594;</div>
+            <p>
+              Вивчення англійської мови онлайн — це зручно та цікаво!
+              Індивідуальні уроки допоможуть швидше подолати страх спілкування
+              та отримати знання в комфортній атмосфері.
+            </p>
+          </div>
+        </div>
       </div>
-         
+
       <div class="advantages-grid">
-        <div class="advantage-grid-item" style="background-color: #F6E8FF;">
-            <img src="./img/advantages/Interactive materials.png" alt="">
-            <h3>Інтерактивні матеріали</h3>
-            <div class="advantage-content">
-                <ul>
-                    <li>відео</li>
-                    <li>аудіо</li>
-                    <li>ігри</li>
-                </ul>
-                <p>(дітки краще сприймають матеріал в ігровій формі)</p>
-            </div>
+        <div class="advantage-grid-item" style="background-color: #f6e8ff">
+          <img src="./img/advantages/Interactive materials.png" alt="" />
+          <h3>Інтерактивні матеріали</h3>
+          <div class="advantage-content">
+            <ul>
+              <li>відео</li>
+              <li>аудіо</li>
+              <li>ігри</li>
+            </ul>
+            <p>(дітки краще сприймають матеріал в ігровій формі)</p>
+          </div>
         </div>
-        <div class="advantage-grid-item" style="background-color: #FFE4CB;">
-            <img src="./img/advantages/Improvements.png" alt="">
-            <h3>Покращення</h3>
-            <div class="advantage-content">
-                <ul>
-                    <li>граматики</li>
-                    <li>говоріння</li>
-                    <li>сприйняття на слух</li>
-                    <li>читання</li>
-                </ul>
-            </div>
+        <div class="advantage-grid-item" style="background-color: #ffe4cb">
+          <img src="./img/advantages/Improvements.png" alt="" />
+          <h3>Покращення</h3>
+          <div class="advantage-content">
+            <ul>
+              <li>граматики</li>
+              <li>говоріння</li>
+              <li>сприйняття на слух</li>
+              <li>читання</li>
+            </ul>
+          </div>
         </div>
-        <div class="advantage-grid-item" style="background-color: #D9FFE0;">
-            <img src="./img/advantages/Individual materials.png" alt="">
-            <h3>Підбір матеріалів індивідуально</h3>
-            <div class="advantage-content">
-                <ul>
-                    <li>вчимося за нашими матеріалами</li>
-                    <li>вчимося за вашими підручниками</li>
-                </ul>
-            </div>
+        <div class="advantage-grid-item" style="background-color: #d9ffe0">
+          <img src="./img/advantages/Individual materials.png" alt="" />
+          <h3>Підбір матеріалів індивідуально</h3>
+          <div class="advantage-content">
+            <ul>
+              <li>вчимося за нашими матеріалами</li>
+              <li>вчимося за вашими підручниками</li>
+            </ul>
+          </div>
         </div>
-      </div>    
-    </section>  
-  
+      </div>
+    </section>
+
     <section class="price-section" id="prices">
       <div class="price-card">
         <!-- Центрований заголовок та логотип -->
         <div class="header-content">
           <h2>Вартість уроків</h2>
-          <img src="./img/logo.png" alt="iziBloom Logo">
+          <img src="./img/logo.png" alt="iziBloom Logo" />
         </div>
-        
-        <!-- Флексбокс з трьома колонками -->
-        <div class="price-details">
 
-          <div class="column">
-            <p class="subtitle">Індивідуальні</p>
-            <p class="subtitle">заняття</p>
-          </div>
+        <!-- Контейнер у вигляді списку -->
+        <ul class="price-details">
+          <li class="column">
+            <p class="subtitle">Індивідуальні<br />заняття</p>
+          </li>
 
-          <div class="column">
+          <li class="column">
             <div class="price-container">
-              <p class="price">370 
-                <span>грн</span>
-              </p>
-              <p class="per-lesson">за урок</p>
+              <p class="price">370</p>
+              <span class="column-price-details">
+                <span class="currency">грн</span>
+                <span class="per-lesson">за урок</span>
+              </span>
             </div>
-          </div>
+          </li>
 
-          <div class="column">
+          <li class="column colum-info">
             <p class="additional-info">55 хв/урок</p>
-          </div>
-          
-        </div>
+          </li>
+        </ul>
       </div>
-    </section>  
+    </section>
 
     <!-- Питання секція -->
     <section class="question-section">
@@ -278,97 +356,163 @@
         <h2>Виникли питання?</h2>
         <p>Пишіть нам і отримайте відповідь найближчим часом</p>
       </div>
-      <button href="javascript:void(0);" id="openQuestionModalButton" class="custom-button" onclick="openModal('become')">Написати питання</button>
-    </section> 
-       
+      <button
+        href="javascript:void(0);"
+        id="openQuestionModalButton"
+        class="custom-button"
+        onclick="openModal('become')"
+      >
+        Написати питання
+      </button>
+    </section>
+
     <!-- Модальне вікно "Задай питання" -->
     <div id="questionModal" class="modal" style="display: none">
       <div class="modal-content">
-          <span class="close">&times;</span>
-          <form id="searchForm">
-              
-            <label for="becomeName"><img src="./img/modal_window/person.png" alt="">Ім'я:</label>
-            <input type="text" id="becomeName" name="name" placeholder="Введіть ваше ім'я" required />
-              
-            <label for="becomePhone">
-              <img src="./img/modal_window/Phone.png" alt="">Телефон:
-            </label>
-            <input type="tel" id="becomePhone" name="phone" placeholder="Введіть номер телефону" 
-                 required pattern="[0-9]{10,15}" title="Введіть правильний номер телефону (10-15 цифр)" />    
+        <span class="close">&times;</span>
+        <form id="searchForm">
+          <label for="becomeName"
+            ><img src="./img/modal_window/person.png" alt="" />Ім'я:</label
+          >
+          <input
+            type="text"
+            id="becomeName"
+            name="name"
+            placeholder="Введіть ваше ім'я"
+            required
+          />
 
-                 <label for="becomeMessage"><img src="./img/modal_window/message.png" alt="">Питання:</label>
-              <textarea id="becomeMessage" name="message" placeholder="Ваше повідомлення" required></textarea>
+          <label for="becomePhone">
+            <img src="./img/modal_window/Phone.png" alt="" />Телефон:
+          </label>
+          <input
+            type="tel"
+            id="becomePhone"
+            name="phone"
+            placeholder="Введіть номер телефону"
+            required
+            pattern="[0-9]{10,15}"
+            title="Введіть правильний номер телефону (10-15 цифр)"
+          />
 
-              <button type="submit" class="submit-button">Запитати</button>
-          </form>
+          <label for="becomeMessage"
+            ><img src="./img/modal_window/message.png" alt="" />Питання:</label
+          >
+          <textarea
+            id="becomeMessage"
+            name="message"
+            placeholder="Ваше повідомлення"
+            required
+          ></textarea>
+
+          <button type="submit" class="submit-button">Запитати</button>
+        </form>
       </div>
     </div>
 
     <!-- Вакансія викладача секція -->
     <section class="job-section" id="job-search">
       <h2>Вакансія викладача</h2>
-      <p>Якщо ви зацікавлені приєднатися до нашої команди та стати </p>
+      <p>Якщо ви зацікавлені приєднатися до нашої команди та стати</p>
       <p>частиною професійного колективу, заповніть анкету</p>
-      <a href="javascript:void(0);" id="openSearchModalButton" class="button" onclick="openModal('become')">Заповнити</a>
+      <a
+        href="javascript:void(0);"
+        id="openSearchModalButton"
+        class="button"
+        onclick="openModal('become')"
+        >Заповнити</a
+      >
     </section>
 
     <!-- Модальне вікно "Шукати репетитора" -->
     <div id="searchModal" class="modal" style="display: none">
       <div class="modal-content">
-          <span class="close">&times;</span>
-          <form id="searchForm">
-              
-              <label for="becomeName"><img src="./img/modal_window/person.png" alt="">Ім'я:</label>
-              <input type="text" id="becomeName" name="name" placeholder="Введіть ваше ім'я" required />
+        <span class="close">&times;</span>
+        <form id="searchForm">
+          <label for="becomeName"
+            ><img src="./img/modal_window/person.png" alt="" />Ім'я:</label
+          >
+          <input
+            type="text"
+            id="becomeName"
+            name="name"
+            placeholder="Введіть ваше ім'я"
+            required
+          />
 
-              <label for="becomePhone">
-                <img src="./img/modal_window/Phone.png" alt="">Телефон:
-              </label>
-              <input type="tel" id="becomePhone" name="phone" placeholder="Введіть номер телефону" 
-                   required pattern="[0-9]{10,15}" title="Введіть правильний номер телефону (10-15 цифр)" />        
-            
-              <label for="becomeAge"><img src="./img/modal_window/age.png" alt="">Вік:</label>
-              <input type="number" id="becomeAge" name="age" placeholder="Введіть ваш вік" required />
-            
-              <label for="searchExperience"><img src="./img/modal_window/work.png" alt="">Досвід:</label>
-              <input type="text" id="searchExperience" name="experience" placeholder="Опишіть ваш досвід" required />
-              <input type="hidden" name="form_type" value="search_tutor" />
+          <label for="becomePhone">
+            <img src="./img/modal_window/Phone.png" alt="" />Телефон:
+          </label>
+          <input
+            type="tel"
+            id="becomePhone"
+            name="phone"
+            placeholder="Введіть номер телефону"
+            required
+            pattern="[0-9]{10,15}"
+            title="Введіть правильний номер телефону (10-15 цифр)"
+          />
 
-              <button type="submit" class="submit-button">Надіслати</button>
-          </form>
+          <label for="becomeAge"
+            ><img src="./img/modal_window/age.png" alt="" />Вік:</label
+          >
+          <input
+            type="number"
+            id="becomeAge"
+            name="age"
+            placeholder="Введіть ваш вік"
+            required
+          />
+
+          <label for="searchExperience"
+            ><img src="./img/modal_window/work.png" alt="" />Досвід:</label
+          >
+          <input
+            type="text"
+            id="searchExperience"
+            name="experience"
+            placeholder="Опишіть ваш досвід"
+            required
+          />
+          <input type="hidden" name="form_type" value="search_tutor" />
+
+          <button type="submit" class="submit-button">Надіслати</button>
+        </form>
       </div>
     </div>
 
     <!-- Підвал -->
-    <footer class="footer-section">
+    <footer class="footer-section" id="footer">
       <div class="footer-content">
-          <div class="footer-logo">
-              <img src="./img/logo.png" alt="iziBloom Logo">
-              <span class="logo-izi">izi</span>
-              <span class="logo-bloom">Bloom</span>
-          </div>
-  
-          <div class="footer-links">і
-              <h3>Допомога</h3>
-              <a href="#learning-directions">Напрямки</a>
-              <a href="#prices">Вартість</a>
-              <a href="#free-lesson">Пробний урок</a>
-              <a href="#job-search">Вакансія для викладачів</a>
-          </div>
+        <div class="footer-logo">
+          <img src="./img/logo.png" alt="iziBloom Logo" class="footer-img"/>
+          <span class="logo-izi">izi</span>
+          <span class="logo-bloom">Bloom</span>
+        </div>
 
-          <div class="footer-social">
-            <h3>Зв'язок з нами</h3>
-            <a href="https://facebook.com" target="_blank">Facebook</a>
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-            <a href="https://twitter.com" target="_blank">Twitter</a>
-          </div>
-  
-          <div class="footer-contact">
-              <span class="phone-icon">
-                  <img src="./img/phone-footer.png" alt="phone footer">
-              </span>
-              <a href="tel:0672903393">+38 (067) 290 33 93</a>
-          </div>
+        <div class="footer-links">
+          і
+          <h3>Допомога</h3>
+          <a href="#learning-directions">Напрямки</a>
+          <a href="#prices">Вартість</a>
+          <a href="#free-lesson">Пробний урок</a>
+          <a href="#job-search">Вакансія для викладачів</a>
+        </div>
+
+        <div class="footer-social">
+          <h3>Зв'язок з нами</h3>
+          <a href="https://www.facebook.com/dasha.215792" target="_blank">Facebook</a>
+          <a href="https://www.instagram.com/izibloom?igsh=a3UwNThqd3d2bmR4&utm_source=qr" target="_blank">Instagram</a>
+          <a href="https://t.me/dhritsay" target="_blank">Telegram</a>
+          <a href="viber://chat?number=%2B380672903393" target="_blank">Viber</a>
+        </div>
+
+        <div class="footer-contact">
+          <span class="phone-icon">
+            <img src="./img/phone-footer.png" alt="phone footer" />
+          </span>
+          <a href="tel:0672903393">+38 (067) 290 33 93</a>
+        </div>
       </div>
     </footer>
 
