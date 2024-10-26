@@ -379,7 +379,7 @@ nav,
   margin-top: 4em;
   margin-left: 2em;
 }
-
+  
 .button_language:last-of-type {
   margin-top: 1rem;
   margin-left: 11em;
@@ -479,7 +479,7 @@ nav,
     width: 70%;
   }
 
-  #language-banner .text-container {
+  .language-banner .text-container {
     width: 100%;
     padding: 0 10px; /* Додаємо відступи для тексту */
   }
@@ -519,6 +519,8 @@ nav,
 
   .language-banner h2 {
     font-size: 1.2rem; /* Зменшуємо заголовки */
+    white-space: nowrap;
+    letter-spacing: normal;
   }
 
   .language-banner p {
@@ -745,6 +747,10 @@ nav,
     font-size: 1.3em;
   }
 }
+
+
+
+
 
 /*СТИЛІ ДЛЯ РІЗНІ НАПРЯМКИ*/
 .learning-directions {
@@ -1467,7 +1473,7 @@ nav,
 
   .additional-info {
     width: auto;
-    font-size: 12px;
+    font-size: 25px;
     padding: 0 20px;
   }
 }
@@ -1515,9 +1521,13 @@ nav,
 
   .additional-info {
     width: 90%;
-    font-size: 10px;
+    font-size: 20px;
   }
 }
+
+
+
+
 
 /* СТИЛІ ДЛЯ ЗАДАЙ ПИТАННЯ */
 .question-section {
@@ -2068,6 +2078,16 @@ nav,
     margin-left: -20px;
   }
 
+  .footer-links h3,
+  .footer-social h3 {
+    font-size: 20px; /* Зменшити розмір заголовків */
+  }
+
+  .footer-links a,
+  .footer-social a {
+    font-size: 17px; /* Зменшений шрифт для мобільних пристроїв */
+  }
+
   .footer-links{
     margin-top: -20px;
   }
@@ -2088,9 +2108,14 @@ nav,
     font-size: 20px; /* Менший текст для мобільних пристроїв */
   }
 
+  .footer-links h3,
+  .footer-social h3 {
+    font-size: 20px; /* Зменшити розмір заголовків */
+  }
+
   .footer-links a,
   .footer-social a {
-    font-size: 14px; /* Зменшений шрифт для мобільних пристроїв */
+    font-size: 18px; /* Зменшений шрифт для мобільних пристроїв */
   }
 
   .footer-contact {
