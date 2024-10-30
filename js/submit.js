@@ -20,12 +20,25 @@ async function sendMessage(formData, messageText) {
       })
     });
     if (!response.ok) throw new Error('Помилка при надсиланні повідомлення');
-    alert('Дані успішно надіслано!');
+    
+    // Оновлюємо статус надсилання в main.js
+    window.handleSubmissionStatus(true, 'becomeModal'); // Закриває модальне вікно "Хочу стати Репетитором"
+    window.handleSubmissionStatus(true, 'questionModal'); // Закриває модальне вікно "Хочу стати Репетитором"
+    window.handleSubmissionStatus(true, 'searchModal'); // Закриває модальне вікно "Хочу стати Репетитором"
+
+    // Показуємо модальне вікно успіху
+    window.showModal('alert-success');
+    
   } catch (error) {
-    console.error(error);
-    alert('Помилка при надсиланні даних. Спробуйте ще раз.');
+
+    // Показуємо модальне вікно помилки
+    window.showModal('alert-error');
+
+    // Оновлюємо статус надсилання в main.js
+    window.handleSubmissionStatus(false, 'becomeModal'); // Закриває модальне вікно "Хочу стати Репетитором"
   }
 }
+
 
 // Функція для формування повідомлення для форми "Записатися на урок"
 function formatLessonSignupMessage(data) {
