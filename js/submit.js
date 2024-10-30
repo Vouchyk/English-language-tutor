@@ -33,9 +33,6 @@ async function sendMessage(formData, messageText) {
 
     // Показуємо модальне вікно помилки
     window.showModal('alert-error');
-
-    // Оновлюємо статус надсилання в main.js
-    window.handleSubmissionStatus(false, 'becomeModal'); // Закриває модальне вікно "Хочу стати Репетитором"
   }
 }
 
