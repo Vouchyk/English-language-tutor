@@ -1,4 +1,3 @@
-/* Основні стилі */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -529,6 +528,10 @@ nav,
     margin-left: -15px;
   }
 }
+
+
+
+
 
 /*СТИЛІ ДЛЯ БЕЗКОШТОВНОГО НАВЧАННЯ*/
 .free-lesson {
@@ -2123,6 +2126,144 @@ nav,
   }
 }
 
+
+
+
+
+/* Загальні стилі для модальних вікон */
+.alert-modal {
+  display: none; /* Сховати за замовчуванням */
+  position: fixed; /* Закріплення на екрані */
+  top: 15%; /* Центр по вертикалі */
+  left: 50%; /* Центр по горизонталі */
+  transform: translate(-50%, -50%); /* Перемістити на половину ширини та висоти для точного центровання */
+  width: 90%; /* Ширина відносно екрана */
+  max-width: 500px; /* Максимальна ширина */
+  height: auto; /* Автоматична висота для адаптивності */
+  justify-content: center; /* Вирівнювання по центру */
+  align-items: center; /* Вирівнювання по центру */
+  z-index: 1000; /* Вищий порядок відображення */
+  transition: opacity 0.3s ease; /* Анімація для з'явлення */
+}
+
+/* Стилі для вмісту модальних вікон */
+.alert-content {
+  background: #fff; /* Білий фон */
+  border-radius: 15px; /* Закруглені кути */
+  padding: 30px; /* Збільшене внутрішнє поле */
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2); /* Професійна тінь */
+  max-width: 500px; /* Максимальна ширина */
+  width: 90%; /* Ширина відносно екрана */
+  text-align: center; /* Центрування тексту */
+  animation: slideDown 0.5s ease-in-out; /* Анімація для появи */
+}
+
+/* Анімація для вмісту */
+@keyframes slideDown {
+  from {
+      transform: translateY(-30px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Стилі для заголовка */
+.alert-header {
+  font-size: 26px; /* Розмір шрифту */
+  margin-bottom: 15px; /* Відступ знизу */
+  font-weight: 600; /* Напівжирний шрифт */
+}
+
+/* Стилі для успішного заголовка */
+.alert-header.success {
+  color: #28a745; /* Зелений колір для успіху */
+}
+
+/* Стилі для заголовка помилки */
+.alert-header.error {
+  color: #dc3545; /* Червоний колір для помилки */
+}
+
+/* Стилі для тексту */
+.alert-text {
+  font-size: 18px; /* Розмір шрифту */
+  color: #555; /* Темно-сірий колір тексту */
+  margin-bottom: 20px; /* Відступ знизу */
+}
+
+/* Стилі для кнопки закриття */
+.alert-close-btn {
+  cursor: pointer; /* Курсор у вигляді вказівника */
+  font-size: 24px; /* Розмір шрифту */
+  color: #aaa; /* Колір */
+  transition: color 0.3s; /* Анімація для зміни кольору */
+}
+
+.alert-close-btn:hover {
+  color: #777; /* Зміна кольору при наведенні */
+}
+
+/* Додаткові стилі для анімації */
+.alert-modal.show {
+  display: flex; /* Показати модальне вікно */
+  opacity: 1; /* Прозорість */
+}
+
+/* Анімація при закритті */
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
+
+.alert-modal.hide {
+  animation: fadeOut 0.5s ease;
+  display: flex; /* Показати перед закриттям */
+}
+
+/* Медіа-запити для адаптивності */
+@media (max-width: 768px) {
+  .alert-header {
+    font-size: 22px; /* Менший розмір шрифту для заголовка */
+  }
+
+  .alert-text {
+    font-size: 16px; /* Менший розмір шрифту для тексту */
+  }
+
+  .alert-content {
+    padding: 20px; /* Менші відступи */
+  }
+}
+
+@media (max-width: 480px) {
+  .alert-header {
+    font-size: 20px; /* Ще менший розмір шрифту для заголовка */
+  }
+
+  .alert-text {
+    font-size: 14px; /* Ще менший розмір шрифту для тексту */
+  }
+
+  .alert-content {
+    padding: 15px; /* Ще менші відступи */
+  }
+
+  .alert-close-btn {
+    font-size: 20px; /* Менший розмір шрифту для кнопки закриття */
+  }
+}
+
+
+
+
+
 /* Загальний стиль для всіх модальних вікон */
 .modal {
   display: none; /* Сховати модальне вікно за замовчуванням */
@@ -2264,3 +2405,4 @@ textarea {
   margin-top: -8px; /* Для четвертого зображення (повідомлення) */
   margin-right: 5px;
 }
+
