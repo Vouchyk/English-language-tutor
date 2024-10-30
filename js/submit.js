@@ -39,7 +39,7 @@ function formatQuestionMessage(data) {
 
 // Функція для формування повідомлення для форми "Шукати репетитора"
 function formatSearchTutorMessage(data) {
-  return `<b>Шукати репетитора</b>\n<b>Ім'я:</b> ${data.name}\n<b>Вік:</b> ${data.age}\n<b>Телефон:</b> ${data.phone}\n<b>Досвід:</b> ${data.experience}`;
+  return `<b>Вакансія викладача</b>\n<b>Ім'я:</b> ${data.name}\n<b>Вік:</b> ${data.age}\n<b>Телефон:</b> ${data.phone}\n<b>Досвід:</b> ${data.experience}`;
 }
 
 // Додаємо обробники подій для кожної форми
